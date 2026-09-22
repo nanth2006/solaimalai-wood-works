@@ -1,0 +1,19 @@
+/* Modern styling complements for Solaimalai Wood Works */
+.font-serif-title {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.wood-text-gradient {
+  background: linear-gradient(135deg, #F0A35C 0%, #C9873F 50%, #8B4513 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.wood-card-hover {
+  transition: all 0.3s ease;
+}
+
+.wood-card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(41, 24, 17, 0.08), 0 8px 10px -6px rgba(41, 24, 17, 0.04);
+}

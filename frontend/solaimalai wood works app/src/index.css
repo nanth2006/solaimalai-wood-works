@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-serif: 'Playfair Display', Georgia, serif;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: #291811;
+    background-color: #FDFBF7;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-serif-luxury {
+    font-family: var(--font-serif);
+  }
+}
+
+/* Custom Woodcraft scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F4ECE1;
+}
+::-webkit-scrollbar-thumb {
+  background: #C9873F;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A86827;
+}
+
+/* Glassmorphism helpers */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(230, 213, 189, 0.6);
+}
+
+.glass-dark {
+  background: rgba(28, 19, 13, 0.82);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(201, 135, 63, 0.25);
+}
+
+.wood-gradient-btn {
+  background: linear-gradient(135deg, #D4934B 0%, #A86827 50%, #7B4413 100%);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.wood-gradient-btn:hover {
+  background: linear-gradient(135deg, #E2A35C 0%, #B87632 50%, #8C4F18 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px -5px rgba(168, 104, 39, 0.4);
+}
+.wood-gradient-btn:active {
+  transform: translateY(0);
+}
+
+/* Animation utilities */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}

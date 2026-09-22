@@ -1,0 +1,15 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npm --prefix \"solaimalai wood works app\" run dev",
+    "build": "npm --prefix \"solaimalai wood works app\" run build",
+    "preview": "npm --prefix \"solaimalai wood works app\" run preview",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
