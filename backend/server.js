@@ -62,6 +62,9 @@ const seedProductsIfEmpty = async () => {
     console.error("Seed error:", err.message);
   }
 };
+app.get("/", (req, res) => {
+  res.send("Solaimalai Wood Works Backend is Running");
+});
 
 mongoose
   .connect(process.env.MONGO_URI)
@@ -74,4 +77,4 @@ mongoose
   })
   .catch((err) => {
     console.error("MongoDB connection failed ❌", err.message);
-  });
+  });
