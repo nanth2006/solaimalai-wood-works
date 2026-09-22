@@ -17,7 +17,7 @@ import {
 } from "lucide-react";
 
 // Master Workshop UPI details
-const UPI_ID = "7094297761@upi";
+const UPI_ID = "siglekumar-1@okaxis";
 const PAYEE_NAME = "Solaimalai Wood Works";
 
 function buildUpiLink(amount, note) {
