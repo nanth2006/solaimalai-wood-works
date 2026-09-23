@@ -3,6 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import Navbar from "../components/navbar.jsx";
 import Footer from "../components/footer.jsx";
 import { Trash2, ShoppingBag, ArrowRight, ShieldCheck, Plus, Minus, ArrowLeft } from "lucide-react";
+import { getImageUrl } from "../api/api";
 
 function Cart() {
   const navigate = useNavigate();
@@ -92,7 +93,7 @@ function Cart() {
                   {/* Thumbnail */}
                   <div className="w-full sm:w-28 h-28 bg-[#F5EFE6] rounded-xl overflow-hidden shrink-0 border border-[#EBDCC8]">
                     <img
-                      src={product.image}
+                      src={getImageUrl(product.image)}
                       alt={product.name}
                       className="w-full h-full object-cover"
                       onError={(e) => {

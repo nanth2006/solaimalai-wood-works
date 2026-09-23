@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/navbar.jsx";
 import Footer from "../components/footer.jsx";
-import api from "../api/api";
+import api, { getImageUrl } from "../api/api";
 import { ShoppingBag, CheckCircle2, Sparkles, Filter, Eye, ArrowRight, Loader2 } from "lucide-react";
 
 const fallbackProducts = [
@@ -192,7 +192,7 @@ function Product() {
               {/* Product Image */}
               <div className="relative h-64 bg-[#F5EFE6] overflow-hidden">
                 <img
-                  src={product.image}
+                  src={getImageUrl(product.image)}
                   alt={product.name}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   onError={(e) => {

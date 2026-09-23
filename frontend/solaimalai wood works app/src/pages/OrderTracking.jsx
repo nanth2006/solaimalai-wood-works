@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useSearchParams, Link } from "react-router-dom";
 import Navbar from "../components/navbar.jsx";
 import Footer from "../components/footer.jsx";
-import api from "../api/api";
+import api, { getImageUrl } from "../api/api";
 import {
   Search,
   CheckCircle2,
@@ -285,7 +285,7 @@ function OrderTracking() {
                       <div className="flex items-center gap-3">
                         {item.image && (
                           <img
-                            src={item.image}
+                            src={getImageUrl(item.image)}
                             alt={item.name}
                             className="w-12 h-12 object-cover rounded-xl bg-white border"
                           />

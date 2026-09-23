@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import Navbar from "../../components/navbar.jsx";
 import Footer from "../../components/footer.jsx";
-import api from "../../api/api";
+import api, { getImageUrl } from "../../api/api";
 import {
   PlusCircle,
   Package,
@@ -841,7 +841,7 @@ function AdminProduct() {
                     >
                       <div className="flex items-center gap-3.5">
                         <img
-                          src={p.image}
+                          src={getImageUrl(p.image)}
                           alt={p.name}
                           className="w-14 h-14 object-cover rounded-xl border bg-gray-50 shrink-0 shadow-xs"
                           onError={(e) => {
