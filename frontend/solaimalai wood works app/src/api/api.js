@@ -4,11 +4,10 @@ import axios from "axios";
  * Solaimalai Wood Works - Centralized Production API Configuration
  * 
  * Configured for Render Backend -> Vercel Frontend communication.
- * To point to your Render backend, either update RENDER_BACKEND_URL below
- * or provide VITE_API_URL in your environment.
+ * Live Render backend URL: https://solaimalai-wood-works.onrender.com
  */
 export const RENDER_BACKEND_URL =
-  (import.meta.env.VITE_API_URL || "https://solaimalai-wood-works-backend.onrender.com").replace(
+  (import.meta.env.VITE_API_URL || "https://solaimalai-wood-works.onrender.com").replace(
     /\/api\/?$/,
     ""
   );
@@ -20,7 +19,7 @@ const api = axios.create({
   headers: {
     "Content-Type": "application/json",
   },
-  timeout: 30000, // 30s timeout to allow Render free tier spin-up
+  timeout: 30000, // 30s timeout for network & cold start handling
 });
 
 // Attach JWT token automatically to every request if present
@@ -41,9 +40,10 @@ api.interceptors.response.use(
   (error) => {
     // If unauthorized or token expired, clean up and handle gracefully
     if (error.response && error.response.status === 401) {
-      const isAuthRequest = error.config?.url?.includes("/auth/login") || error.config?.url?.includes("/auth/register");
+      const isAuthRequest =
+        error.config?.url?.includes("/auth/login") ||
+        error.config?.url?.includes("/auth/register");
       if (!isAuthRequest) {
-        // Clear token if invalid on protected endpoints
         localStorage.removeItem("token");
         localStorage.removeItem("user");
       }
